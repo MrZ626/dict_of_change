@@ -15,6 +15,9 @@ local function refresh()
     textObj:add(d.desc, 0, 100)
 
     textObj:add(table.concat(TABLE.reverse(TABLE.copy(d.explain)), "\n\n"), 330, 195)
+    if d.extra then
+        textObj:add(d.extra, 330, 720)
+    end
 
     local host, guest = d.struct:sub(1, 3), d.struct:sub(4, 6)
     textObj:add({ shade, data.base[host][2] }, -100 - 15, 510 - 20, 0, 3)
